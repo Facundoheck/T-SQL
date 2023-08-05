@@ -1,0 +1,3 @@
+ALTER TABLE dbo.CARRERAS ADD
+	descripcion VARCHAR(300) NULL
+GO
