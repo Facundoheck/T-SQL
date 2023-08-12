@@ -7,9 +7,6 @@ CREATE PROCEDURE PA_ALTA_CURSOS(
 AS
 	DECLARE @mensaje VARCHAR(MAX)
 
-
--- inicio validaciones para el alta NO LAS HAGO PARA NO PERDER TIEMPO
--- PONGO LA DE FK DE EJEMPLO
 IF NOT EXISTS (SELECT 1 FROM PROFESORES AS p WHERE p.prof_id = @prof_id)
 BEGIN
 	PRINT 'No existe el ID del profesor. Verifique los datos.'
@@ -18,7 +15,7 @@ END
 
 IF LEN(@titulo) > 70
 BEGIN
-	PRINT 'El título no puede superar los 70 caracteres. Verifique los datos.'
+	PRINT 'El tÃ­tulo no puede superar los 70 caracteres. Verifique los datos.'
 	RETURN -1	
 END
 
@@ -42,7 +39,7 @@ VALUES
 	
 END TRY
 BEGIN CATCH
-	SELECT @mensaje = 'Ocurrió un error al intentar registar el curso: ' + ERROR_MESSAGE() 
+	SELECT @mensaje = 'OcurriÃ³ un error al intentar registar el curso: ' + ERROR_MESSAGE() 
 	PRINT @mensaje
 	RETURN -1
 END CATCH
