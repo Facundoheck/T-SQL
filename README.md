@@ -10,3 +10,5 @@
 
 ## LISTADOS
 <p>a.	Generar una consulta que liste el nombre de las carreras con la cantidad de profesores asignados a la misma. Se recomienda utilizar la sentencia OUTER APPLY (no es obligatorio).</p>
+<p>b.	Generar una consulta que liste apellido y nombre de los profesores que no estén asignados a un curso, indicando el nombre de la carrera que pertenece, el número de teléfono y en caso de no poseer teléfono mostrar una leyenda “No tiene”. 
+Nota: Ordenados de forma descendente por apellido</p>
