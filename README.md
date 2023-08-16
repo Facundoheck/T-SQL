@@ -7,6 +7,8 @@
 <p>a. Crear un procedimiento almacenado que actualice el campo “descripción” de toda la tabla CARRERAS que tengan profesores asignados nacidos en el año 1988.</p>
 <p>Nota: utilizar el nombre PA_ACTUALIZA_CARRERAS</p>
 <p>El campo descripción de la tabla CARRERAS debe concatenar los campos carrera_id, nombre, fecha-hora (utilizar GETDATE) y el aula asignada, para este último utilizar el PA_ASIGNAR_AULA.</p>
+<p>Agregar profesores a la base de datos mediante un procedimiento almacenado (PA_altaProfesores)</p>
+<p>Busqueda de profesores en la base de datos (PA_buscaProfesores)</p>
 
 ## LISTADOS
 <p>a.	Generar una consulta que liste el nombre de las carreras con la cantidad de profesores asignados a la misma.</p>
