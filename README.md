@@ -8,4 +8,7 @@
 <p>Nota: utilizar el nombre PA_ACTUALIZA_CARRERAS</p>
 <p>El campo descripción de la tabla CARRERAS debe concatenar los campos carrera_id, nombre, fecha-hora (utilizar GETDATE) y el aula asignada, para este último utilizar el PA_ASIGNAR_AULA.</p>
 
-
+## LISTADOS
+<p>a.	Generar una consulta que liste el nombre de las carreras con la cantidad de profesores asignados a la misma.</p>
+<p>b.	Generar una consulta que liste apellido y nombre de los profesores que no estén asignados a un curso, indicando el nombre de la carrera que pertenece, el número de teléfono y en caso de no poseer teléfono mostrar una leyenda “No tiene”. 
+Nota: Ordenados de forma descendente por apellido</p>
