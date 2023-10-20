@@ -1,46 +1,32 @@
-## ESTRUCTURA DE TABLAS 
+## CARPETA ESTRUCTURA DE TABLAS 
 <p>1. Generar un script para crear la tabla CURSOS. Definir los tipos de datos que se crean conveniente.</p>
 <p>2. Agregar todas las claves primarias y claves foráneas que crea conveniente (3 tablas).</p> 
 <p>3. Generar un script para agregar el campo “Descripcion” - VARCHAR(300) - a la tabla CARRERAS.</p>
 
-## PROCEDIMIENTOS ALMACENADOS
+## CARPETA PROCEDIMIENTOS ALMACENADOS
 <p>1. Crear un procedimiento almacenado que actualice el campo “descripción” de toda la tabla CARRERAS que tengan profesores asignados nacidos en el año 1988.</p>
 <p>Nota: utilizar el nombre PA_ACTUALIZA_CARRERAS</p>
 <p>El campo descripción de la tabla CARRERAS debe concatenar los campos carrera_id, nombre, fecha-hora (utilizar GETDATE) y el aula asignada, para este último utilizar el PA_ASIGNAR_AULA.</p>
 <p>Agregar profesores a la base de datos mediante un procedimiento almacenado (PA_altaProfesores)</p>
 <p>Busqueda de profesores en la base de datos (PA_buscaProfesores)</p>
 
-## LISTADOS
+## CARPETA LISTADOS
 <p>1.	Generar una consulta que liste el nombre de las carreras con la cantidad de profesores asignados a la misma.</p>
 <p>2.	Generar una consulta que liste apellido y nombre de los profesores que no estén asignados a un curso, indicando el nombre de la carrera que pertenece, el número de teléfono y en caso de no poseer teléfono mostrar una leyenda “No tiene”. 
-Nota: Ordenados de forma descendente por apellido</p>
-<p>3.</p>   
+Nota: Ordenados de forma descendente por apellido</p>   
 
-<p>Table: Signups</p>
-<p>+----------------+----------+</p>
-<p>| Column Name    | Type     |</p>
-<p>+----------------+----------+</p>
-<p>| user_id        | int      |</p>
-<p>| time_stamp     | datetime |</p>
-<p>+----------------+----------+</p>
-<p>user_id is the column of unique values for this table.</p>
-<p>Each row contains information about the signup time for the user with ID user_id.</p>
- 
+<p>3. Confirmation Rate Calculation</p>
 
-<p>Table: Confirmations</p>
+Calcular la tasa de confirmación de los usuarios basándose en las tablas proporcionadas: **Signups** y **Confirmations**.
 
-<p>+----------------+----------+</p>
-<p>| Column Name    | Type     |</p>
-<p>+----------------+----------+</p>
-<p>| user_id        | int      |</p>
-<p>| time_stamp     | datetime |</p>
-<p>| action         | ENUM     |</p>
-<p>+----------------+----------+</p>
+#### Tabla Signups
+- **user_id** (int): Identificador único para los usuarios.
+- **time_stamp** (datetime): Marca de tiempo del registro.
 
-<p>(user_id, time_stamp) is the primary key (combination of columns with unique values) for this table.</p>
-<p>user_id is a foreign key (reference column) to the Signups table.</p>
-<p>action is an ENUM (category) of the type ('confirmed', 'timeout')</p>
-<p>Each row of this table indicates that the user with ID user_id requested a confirmation message at time_stamp and that confirmation message was either confirmed ('confirmed') or expired without confirming ('timeout').</p>
-<p>The confirmation rate of a user is the number of 'confirmed' messages divided by the total number of requested confirmation messages. The confirmation rate of a user that did not request any confirmation messages is 0. Round the confirmation rate to two decimal places.</p>
-<p>Write a solution to find the confirmation rate of each user.</p>
-<p>Return the result table in any order.</p>
+#### Tabla Confirmations
+- **user_id** (int): Clave foránea que referencia la tabla **Signups**.
+- **time_stamp** (datetime): Marca de tiempo de la solicitud de confirmación.
+- **action** (ENUM): Tipo de acción de confirmación ('confirmed', 'timeout').
+
+#### Descripción del Problema
+Cada fila en la tabla **Confirmations** representa una solicitud de confirmación realizada por un usuario. La tasa de confirmación de un usuario se calcula como el número de mensajes 'confirmed' dividido por el total de mensajes de confirmación solicitados. Los usuarios que no solicitaron ningún mensaje de confirmación tienen una tasa de confirmación de 0. La solución calcula y redondea la tasa de confirmación a dos decimales para cada usuario.
